@@ -55,6 +55,44 @@ python os_analyzer.py --cpu --memory --disk --duration 60 --cpu-intensity 0.7
 python os_analyzer.py --all --duration 120
 ```
 
+### Using as a Python Module
+
+You can also use the analyzer programmatically:
+
+```python
+from os_analyzer import PerformanceAnalyzer
+
+config = {
+    'duration': 30.0,
+    'cpu_stress': True,
+    'cpu_intensity': 0.8,
+    'memory_stress': True,
+    'memory_mb': 200,
+    'memory_pattern': 'burst',
+    'disk_stress': False,
+}
+
+analyzer = PerformanceAnalyzer()
+analyzer.run(config)
+```
+
+See `examples.py` for more usage examples.
+
+### Demo Scripts
+
+Run the interactive demo:
+```bash
+./demo.sh
+```
+
+Run specific example:
+```bash
+python examples.py 1  # CPU stress
+python examples.py 2  # Memory stress
+python examples.py 3  # Disk I/O stress
+python examples.py 4  # Combined stress
+```
+
 ### Command-Line Options
 
 #### General Options
