@@ -1,7 +1,7 @@
 """Real-time system monitoring module."""
 import psutil
 import time
-from typing import Dict, Optional
+from typing import Dict
 from datetime import datetime
 
 
@@ -64,7 +64,7 @@ class SystemMonitor:
             return stats
         return None
     
-    def display_stats(self, stats: Optional[Dict] = None):
+    def display_stats(self, stats: Dict | None = None):
         """Display current statistics in a formatted way."""
         if stats is None:
             stats = self.get_current_stats()

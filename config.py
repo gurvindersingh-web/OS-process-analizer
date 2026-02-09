@@ -1,7 +1,6 @@
 """Configuration management for OS Performance Analyzer."""
 import json
 from dataclasses import dataclass, asdict
-from typing import Optional
 
 
 @dataclass
@@ -77,6 +76,6 @@ LOAD_PATTERNS = {
 }
 
 
-def get_preset_config(preset: str) -> Optional[WorkloadConfig]:
+def get_preset_config(preset: str) -> WorkloadConfig | None:
     """Get a predefined configuration by name."""
     return LOAD_PATTERNS.get(preset)
