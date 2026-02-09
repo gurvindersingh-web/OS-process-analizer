@@ -16,6 +16,7 @@ OS Performance Analyzer is a workload generation toolkit for testing operating s
 
 1. Clone the repository:
 ```bash
+# Note: Repository name uses 'analizer' spelling
 git clone https://github.com/gurvindersingh-web/OS-process-analizer.git
 cd OS-process-analizer
 ```

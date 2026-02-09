@@ -13,6 +13,7 @@ import threading
 import multiprocessing
 import psutil
 import signal
+import random
 from datetime import datetime
 from typing import Optional, Dict, List
 
@@ -287,7 +288,7 @@ class DiskStressor:
                     if os.path.isfile(filepath):
                         os.remove(filepath)
                 os.rmdir(self.test_dir)
-        except Exception as e:
+        except Exception:
             # Silently ignore cleanup errors
             pass
             
@@ -334,7 +335,6 @@ class DiskStressor:
                     f.write(data)
                 
                 # Random reads
-                import random
                 file_size = os.path.getsize(filepath)
                 with open(filepath, 'rb') as f:
                     while self.running and time.time() - start_time < duration:
